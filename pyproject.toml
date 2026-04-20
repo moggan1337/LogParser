@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "logparser"
+version = "1.0.0"
+description = "Advanced log parsing and analysis engine"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "LogParser Team", email = "team@logparser.dev"}
+]
+keywords = ["log", "parser", "analysis", "monitoring", "syslog", "apache", "nginx"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+pandas = [
+    "pandas>=2.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/moggan1337/LogParser"
+Documentation = "https://logparser.readthedocs.io"
+Repository = "https://github.com/moggan1337/LogParser"
+Issues = "https://github.com/moggan1337/LogParser/issues"
+
+[project.scripts]
+logparser = "logparser.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests", "tests.*", "examples", "benchmarks", "docs"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310", "py311"]
+include = '\.pyi?$'
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true

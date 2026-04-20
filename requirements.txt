@@ -1,0 +1,5 @@
+# Core requirements
+# No external dependencies for core functionality
+
+# Optional dependencies
+pandas>=2.0.0  # For DataFrame export in aggregator
