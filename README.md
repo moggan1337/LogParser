@@ -15,6 +15,24 @@
 
 ---
 
+## 🎬 Demo
+![LogParser Demo](demo.gif)
+
+*Real-time log parsing and anomaly detection*
+
+## Screenshots
+| Component | Preview |
+|-----------|---------|
+| Log Stream | ![stream](screenshots/log-stream.png) |
+| Pattern View | ![patterns](screenshots/patterns.png) |
+| Alert Dashboard | ![alerts](screenshots/alerts.png) |
+
+## Visual Description
+Log stream shows structured logs being parsed in real-time. Pattern view displays detected log formats with field extraction. Alert dashboard shows anomalies with severity and timestamps.
+
+---
+
+
 ## Table of Contents
 
 - [Overview](#overview)
